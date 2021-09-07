@@ -25,7 +25,7 @@ public class GabineteController {
 
     @GetMapping(path = {"/{id}"})
     public Gabinete getOne(@PathVariable Long id){
-        return service.getOne(id);
+        return service.getId(id);
     }
 
     @PostMapping
@@ -35,11 +35,11 @@ public class GabineteController {
 
     @PutMapping(value = "/{id}")
     public ResponseEntity<Gabinete> update(@PathVariable Long id, @RequestBody Gabinete g){
-        if(service.getOne(id) == null){
+        if(service.getId(id) == null){
             return ResponseEntity.notFound().build();
         }else{
             service.update(g);
-            Gabinete updated = service.getOne(id);
+            Gabinete updated = service.getId(id);
             return ResponseEntity.ok().body(updated);
         }
     }

@@ -16,12 +16,19 @@ public class Computador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    String modelo;
-    Integer ano;
-    @ManyToOne//(cascade = CascadeType.ALL)
-    @JoinColumn(name = "kitupgrader_id")
+    String Tipo;
+    String Fabricante;
+
+    @ManyToOne (fetch = FetchType.EAGER)
+    @JoinColumn(name = "gabinete_id")
     Gabinete gabinete;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "registro_id")
+    /* nao funcionou
+    @OneToOne(mappedBy = "computador")
+    Documento documento
+     */
+
+    //usando o cascadeType.all pra usar todos efeito do tipo cascata
+    @OneToOne(cascade = CascadeType.ALL) //por padrão o fetch é EAGER
+    @JoinColumn(name = "documento_id") // JoinColumn: A entidade mapeada por documento se liga à coluna documento_id
     Documento documento;
 }

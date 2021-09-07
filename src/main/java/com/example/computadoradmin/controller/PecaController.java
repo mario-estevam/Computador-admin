@@ -21,18 +21,18 @@ public class PecaController {
         return service.getAll();
     }
     @GetMapping(path = "/{id}")
-    public Peca getOne(@PathVariable Long id){return service.getOne(id);}
+    public Peca getOne(@PathVariable Long id){return service.getId(id);}
     @PostMapping
     public Peca insert(@RequestBody Peca p){
         return service.insert(p);
     }
     @PutMapping(value = "/{id}")
     public ResponseEntity<Peca> update(@PathVariable Long id, @RequestBody Peca p){
-        if(service.getOne(id) == null){
+        if(service.getId(id) == null){
             return ResponseEntity.notFound().build();
         }else{
             service.update(p);
-            Peca updated = service.getOne(id);
+            Peca updated = service.getId(id);
             return ResponseEntity.ok().body(updated);
         }
     }

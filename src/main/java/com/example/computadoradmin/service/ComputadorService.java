@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Service // essa classe passa a ser um bean, e toda vez que o projeto for inicializado o spring incializa essa classe tb
 public class ComputadorService {
-    private com.example.computadoradmin.repository.ComputadorRepository ComputadorRepository;
+    private ComputadorRepository ComputadorRepository;
 
-    @Autowired
+    @Autowired // computador repository é um bean, ai vamos usar a injeção de dependencia pra que aquele bean q ta na memoria passe a entrar nesas classe toda vez que essa classe for istanciada
     private void setComputadorRepository(ComputadorRepository repository){ this.ComputadorRepository = repository; }
     public Computador insert(Computador c){
         return ComputadorRepository.save(c);
@@ -24,13 +24,9 @@ public class ComputadorService {
     public void delete(Computador c){
         ComputadorRepository.delete(c);
     }
-    public Computador getOne(Long id){
+    public Computador getId(Long id){
         return ComputadorRepository.findById(id).orElse(null);
     }
-    public Computador SaveAndFlush(Computador c){
-        return ComputadorRepository.saveAndFlush(c);
-    }
-
     public Optional<Computador> findById(Long id){
         return ComputadorRepository.findById(id);
     }

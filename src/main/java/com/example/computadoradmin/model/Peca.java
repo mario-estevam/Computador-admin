@@ -18,7 +18,8 @@ public class Peca {
     Long id;
     String nome;
     String tipo;
-    @ManyToMany
+
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "peca_gabinete", joinColumns = @JoinColumn(name = "peca_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "gabinete_id")

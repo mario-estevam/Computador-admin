@@ -17,5 +17,11 @@ public class Documento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String montado_por;
-    Long codMontagem;
+    Long cod_montagem;
+    /*
+     @OneToOne
+     @MapsId
+     @JoinColum(name = "computador_id")
+     Computador computador
+     */
 }

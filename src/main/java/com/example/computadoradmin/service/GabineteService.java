@@ -23,7 +23,7 @@ public class GabineteService {
     public void delete(Gabinete g){
         gabineteRepository.delete(g);
     }
-    public Gabinete getOne(Long id){
+    public Gabinete getId(Long id){
         return gabineteRepository.findById(id).orElse(null);
     }
     public Gabinete SaveAndFlush(Gabinete g){

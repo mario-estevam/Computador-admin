@@ -24,7 +24,7 @@ public class PecaService {
     public void delete(Peca p){
         pecaRepository.delete(p);
     }
-    public Peca getOne(Long id){
+    public Peca getId(Long id){
         return pecaRepository.findById(id).orElse(null);
     }
     public Peca SaveAndFlush(Peca p){return pecaRepository.saveAndFlush(p);}
