@@ -31,9 +31,6 @@ public class PecaService {
     public Peca getId(Long id){
         return pecaRepository.findById(id).orElse(null);
     }
-    public Optional<Peca> findById(Long id){
-        return pecaRepository.findById(id);
-    }
     public List<Peca> getAll(){
         return pecaRepository.findAll();
     }

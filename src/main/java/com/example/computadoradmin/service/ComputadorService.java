@@ -30,9 +30,6 @@ public class ComputadorService {
     public Computador getId(Long id){
         return computadorRepository.findById(id).orElse(null);
     }
-    public Optional<Computador> findById(Long id){
-        return computadorRepository.findById(id);
-    }
     public List<Computador> getAll(){
         return computadorRepository.findAll();
     }

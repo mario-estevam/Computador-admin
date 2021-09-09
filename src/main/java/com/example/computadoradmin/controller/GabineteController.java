@@ -56,7 +56,7 @@ public class GabineteController {
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id){
         return service
-                .findById(id)
+                .getGabineteById(id)
                 .map(record -> { // passamos para a função map uma funcao, se er ele manda o 202 de ok se n ele da not found
                     service.delete(record);
                     return ResponseEntity.status(202).build();

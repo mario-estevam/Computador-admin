@@ -30,9 +30,6 @@ public class GabineteService {
     public Gabinete getId(Long id){
         return gabineteRepository.findById(id).orElse(null);
     }
-    public Optional<Gabinete> findById(Long id){
-        return gabineteRepository.findById(id);
-    }
     public List<Gabinete> getAll(){
         return gabineteRepository.findAll();
     }
