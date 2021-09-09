@@ -18,7 +18,5 @@ public class Gabinete {
     Long id;
     String marca;
     String modelo;
-    public Long getId(){
-        return id;
-    }
+
 }

@@ -11,27 +11,30 @@ import java.util.Optional;
 
 @Service // essa classe passa a ser um bean, e toda vez que o projeto for inicializado o spring incializa essa classe tb
 public class ComputadorService {
-    private ComputadorRepository ComputadorRepository;
+    private ComputadorRepository computadorRepository;
 
     @Autowired // computador repository é um bean, ai vamos usar a injeção de dependencia pra que aquele bean q ta na memoria passe a entrar nesas classe toda vez que essa classe for istanciada
-    private void setComputadorRepository(ComputadorRepository repository){ this.ComputadorRepository = repository; }
-    public Computador insert(Computador c){
-        return ComputadorRepository.save(c);
+    private void setComputadorRepository(ComputadorRepository repository){ this.computadorRepository = repository; }
+    public Computador insert(Computador computador){
+        return computadorRepository.save(computador);
     }
-    public Computador update(Computador c){
-        return ComputadorRepository.save(c);
+    public Optional<Computador> getComputadorById(Long id){
+        return computadorRepository.findById(id);
     }
-    public void delete(Computador c){
-        ComputadorRepository.delete(c);
+    public Computador update(Computador computador){
+        return computadorRepository.save(computador);
+    }
+    public void delete(Computador computador){
+        computadorRepository.delete(computador);
     }
     public Computador getId(Long id){
-        return ComputadorRepository.findById(id).orElse(null);
+        return computadorRepository.findById(id).orElse(null);
     }
     public Optional<Computador> findById(Long id){
-        return ComputadorRepository.findById(id);
+        return computadorRepository.findById(id);
     }
     public List<Computador> getAll(){
-        return ComputadorRepository.findAll();
+        return computadorRepository.findAll();
     }
 
 }

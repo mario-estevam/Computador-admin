@@ -26,8 +26,5 @@ public class Peca {
     )
     List<Gabinete> gabinete;
 
-    public Long getId(){
-        return id;
-    }
 
 }

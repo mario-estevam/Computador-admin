@@ -22,13 +22,8 @@ public class Computador {
     @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn(name = "gabinete_id")
     Gabinete gabinete;
-    /* nao funcionou
-    @OneToOne(mappedBy = "computador")
-    Documento documento
-     */
 
-    //usando o cascadeType.all pra usar todos efeito do tipo cascata
     @OneToOne(cascade = CascadeType.ALL) //por padrão o fetch é EAGER
-    @JoinColumn(name = "documento_id") // JoinColumn: A entidade mapeada por documento se liga à coluna documento_id
+    @JoinColumn(name = "documento_id")
     Documento documento;
 }
