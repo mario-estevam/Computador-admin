@@ -10,8 +10,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Data
 @Entity
-
-
 public class Computador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
