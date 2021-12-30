@@ -6,5 +6,5 @@ A API desenvolvida deverá ser consumida por um front-end que teste suas funcion
 
 Link do vídeo explicando e mostrando as funcionalidades desenvolvidas:
 https://youtu.be/VypnmK80Po0
-
-
+</br>
+Link do front-end desenvolvido (uso do react-admin): https://github.com/mario-estevam/React-admin_Computador</br>
